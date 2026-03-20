@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>💖 Habit Tracker</h1>
+
+    <p>Build better habits. Track your life.</p>
+
+    <br>
+
+    <button onclick="goLogin()" class="login-btn">Login</button>
+    <br><br>
+    <button onclick="goRegister()" class="register-btn">Register</button>
+</div>
+
+<script>
+function goLogin() {
+    window.location.href = "/login_page";
+}
+
+function goRegister() {
+    window.location.href = "/register_page";
+}
+</script>
+
+</body>
+</html>

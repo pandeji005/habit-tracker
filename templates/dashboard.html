@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <div class="header">
+            <div class="title">
+                💖 Habit Tracker
+            </div>
+
+            <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+
+
+        
+
+        <!-- Add Habit Section -->
+        <div class="add-section">
+            
+                <input type="text" id="habitInput" placeholder="Enter a habit...">
+                <button onclick="addHabit()">Add</button>
+            
+        </div>
+
+        <!-- Habit List -->
+        <div id="habitList"></div>
+
+        <!-- Mood Section -->
+        <div class="mood-section">
+            <h3>How are you feeling today?</h3>
+            <button onclick="setMood('happy')">😄</button>
+            <button onclick="setMood('normal')">😐</button>
+            <button onclick="setMood('sad')">😞</button>
+        </div>
+
+    </div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

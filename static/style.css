@@ -1,0 +1,340 @@
+body {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f0f1a;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff4d8d;
+}
+
+.header h1 {
+    margin: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/* Center everything */
+.container {
+    text-align: center;
+    padding: 40px;
+
+    width: 90%;
+    max-width: 420px;
+
+    margin: auto;
+
+
+    background: rgba(26, 26, 46, 0.8);
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 0 40px rgba(255, 77, 141, 0.2);
+
+    animation: fadeIn 0.5s ease-in;
+}
+
+.container:hover {
+    box-shadow: 0 0 60px rgba(255, 77, 141, 0.4);
+}
+
+
+input:hover {
+    box-shadow: 0 0 8px rgba(255, 77, 141, 0.4);
+}
+
+.top-bar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.logout-btn {
+    width: auto !important;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}    
+}
+
+/* Title */
+h1 {
+    color: #ff4d8d;
+}
+
+p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+.add-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.add-section input {
+    flex: 1;
+}
+
+.add-section button {
+    width: auto;
+    padding: 10px 16px;
+}
+
+
+
+/* Habit Cards */
+.habit-card {
+    background: #1a1a2e;
+    padding: 15px;
+    margin: 15px auto;
+    width: 100%;
+    border-radius: 12px;
+
+    /* New additions */
+    box-shadow: 0 0 15px rgba(255, 77, 141, 0.4);
+    transition: 0.3s;
+}
+
+.habit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 77, 141, 0.7);
+}
+
+
+.habit-card button {
+    margin-top: 10px;
+    background: linear-gradient(135deg, #ff4d8d, #ff2e6e);
+}
+
+
+.mood-section button.active {
+    background: #ff4d8d;
+    transform: scale(1.2);
+}
+
+/* General Button Style */
+button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff4d8d, #ff85a2);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 77, 141, 0.4);
+}
+
+.login-btn {
+    background: linear-gradient(135deg, #ff4d8d, #ff2e6e);
+}
+
+.register-btn {
+    background: linear-gradient(135deg, #ff85a2, #ff4d8d);
+}
+
+/* Hover Effect */
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 77, 141, 0.7);
+}
+
+/* Click Effect */
+button:active {
+    transform: scale(0.95);
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+
+    border-radius: 12px;
+    border: 1px solid transparent;
+
+    background: linear-gradient(#1a1a2e, #1a1a2e) padding-box,
+                linear-gradient(135deg, #ff4d8d, #ff85a2) border-box;
+
+    color: white;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+input:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 77, 141, 0.7);
+}
+
+
+input::placeholder {
+    color: #aaa;
+}
+
+.mood-section button {
+    font-size: 24px;
+    background: #1a1a2e;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+/* Hover */
+.mood-section button:hover {
+    background: #ff4d8d;
+    transform: scale(1.2);
+}
+
+
+/* =========================
+   GLOBAL RESPONSIVE FIXES
+========================= */
+
+body {
+    padding: 10px;
+}
+
+/* Container adapts to screen */
+.container {
+    width: 90%;
+    max-width: 420px;
+}
+
+/* Header responsive */
+.header {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Fix habit card width */
+.habit-card {
+    width: 100%;
+}
+
+/* =========================
+   MOBILE (PHONES)
+========================= */
+
+@media (max-width: 480px) {
+
+    /* Stack header properly */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logout-btn {
+        align-self: flex-end;
+    }
+
+    /* Stack input + button */
+    .add-section {
+        flex-direction: column;
+    }
+
+    .add-section button {
+        width: 100%;
+    }
+
+    /* Mood buttons vertical */
+    .mood-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Reduce text size slightly */
+    .title {
+        font-size: 22px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    /* Reduce padding */
+    .container {
+        padding: 25px;
+    }
+}
+
+/* =========================
+   TABLET (MEDIUM SCREENS)
+========================= */
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+    .container {
+        max-width: 500px;
+    }
+
+    .title {
+        font-size: 26px;
+    }
+}
+
+/* =========================
+   LARGE SCREENS
+========================= */
+
+@media (min-width: 1024px) {
+
+    .container {
+        max-width: 450px;
+    }
+}
+
+/* =========================
+   BUTTON FIXES
+========================= */
+
+button {
+    width: 100%;
+}
+
+.add-section button {
+    width: auto;
+}
+
+/* =========================
+   SMOOTH SCALING TEXT
+========================= */
+
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+}
